@@ -7,8 +7,8 @@ A comprehensive solution for Michigan's Earned Sick Time Act (ESTA) compliance, 
 Clone and bootstrap a new project based on ESTA-PRO:
 
 ```bash
-# Clone the repository
-git clone https://github.com/Michiganman2353/ESTA-PRO.git rainforest-temp
+# Clone the repository (replace with source repo URL if different)
+git clone https://github.com/YOUR-SOURCE-USERNAME/ESTA-PRO.git rainforest-temp
 cd rainforest-temp
 
 # Set up your new repository
@@ -16,7 +16,8 @@ git remote remove origin
 git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
 git push -u origin main
 
-# Run the bootstrap script
+# Make the bootstrap script executable and run it
+chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
 
