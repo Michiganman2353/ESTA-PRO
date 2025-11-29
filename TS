@@ -1,0 +1,10 @@
+const syncMachine = createMachine({
+  id: 'zero-entry-sync',
+  initial: 'idle',
+  states: {
+    idle: { on: { START_PAY_PERIOD: 'pulling' } },
+    pulling: { invoke: { src: 'pullFromQuickBooks', onDone: 'predicting' } },
+    predicting: { invoke: { src: 'helixForecast', onDone: 'ready' } },
+    ready: { type: 'final' }
+  }
+});
