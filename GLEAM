@@ -1,0 +1,10 @@
+pub type Law {
+  Michigan2025(rate: Ratio(1, 40), cap: Hours(40), effective: Date(2025, 2, 21))
+  Michigan2026(rate: Ratio(1, 30), cap: Hours(72), effective: Date(2026, 7, 1))
+}
+
+pub fn accrue(worked: Hours, laws: List(Law)) -> Accrual {
+  laws
+  |> list.filter(fn(l) { date.is_before(today(), l.effective) })
+  |> list.fold(initial_accrual, fn(acc, law) { apply_rule(acc, worked, law) })
+}
